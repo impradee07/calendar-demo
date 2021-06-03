@@ -1,0 +1,39 @@
+<div class="flex justify-center mt-32" style="height: 100vh">
+  <div class="body">
+    <div class="image">
+      <img src="/assets/images/calendar.jpg" alt="calendar-image" />
+    </div>
+    <div class="sub -mt-8">
+      <form [formGroup]="userDetails">
+        <div class="form-group email">
+          <label for="email">Email</label>
+          <input
+            autofocus
+            autocomplete="off"
+            placeholder="Please enter your email"
+            type="email"
+            id="email"
+            class="form-control"
+            formControlName="userEmail"
+            name="email"
+            [class.is-invalid]="
+              userDetails.get('userEmail').invalid &&
+              userDetails.get('userEmail').touched
+            "
+          />
+        </div>
+        <button
+          [ngClass]="{ 'opacity-75 cursor-not-allowed': isLoading }"
+          [disabled]="isLoading"
+          class="text-white font-bold py-2 px-4 rounded mt-2"
+          style="background-color: #34daa1"
+          (click)="onLogin()"
+          type="submit"
+        >
+          Let's go
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<notifier-container></notifier-container>

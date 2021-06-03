@@ -1,0 +1,31 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="alert-box">
+  <i class="fas fa-pen" id="edit" (click)="goto()"></i>
+  <i class="fas fa-trash" id="delete" (click)="onDelete()"></i>
+  <div id="close" (click)="onClose()"></div>
+
+  <div class="column" style="padding: inherit">
+    <div class="row" style="padding-bottom: 20px">
+      <i class="fa fa-calendar" aria-hidden="true"
+        >{{ "       " }}{{ eventDetails.eventname }}</i
+      >
+    </div>
+    <div class="row" style="padding-bottom: 20px">
+      <i class="fa fa-calendar" aria-hidden="true"
+        >{{ "       " }}{{ eventDetails.fromDate }} -
+        {{ eventDetails.toDate }}</i
+      >
+    </div>
+    <div class="row" style="padding-bottom: 20px">
+      <i class="fa fa-calendar" aria-hidden="true"
+        >{{ "       " }}{{ eventDetails.fromTime }} -
+        {{ eventDetails.toTime }}</i
+      >
+    </div>
+  </div>
+
+  <div *ngIf="show">
+    <app-event-create [editDetails]="eventDetails"></app-event-create>
+  </div>
+  <notifier-container></notifier-container>
+</div>

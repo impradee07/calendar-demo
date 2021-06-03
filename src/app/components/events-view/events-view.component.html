@@ -1,0 +1,23 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="alert-box">
+  <div class="row">
+    <p></p>
+    <br />
+    <br />
+    <div id="close" (click)="onClose()"></div>
+    <div class="eventViewContainer">
+      <div *ngFor="let event of eventDetails">
+        <p class="event-day">
+          <b (click)="onPreview(event)"
+            >{{ event.eventname }} at {{ event.fromTime }}</b
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-preview
+  [eventDetails]="event"
+  (onPreview)="onPreview(event)"
+  *ngIf="isPreview"
+></app-preview>

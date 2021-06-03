@@ -1,0 +1,81 @@
+.column {
+  padding-left: 15px;
+}
+.column1 {
+  padding-left: 10px;
+}
+.title {
+  width: 300px;
+  height: 40px;
+}
+#priority {
+  width: 235px;
+  height: 40px;
+}
+.saveButton {
+  background-color: rgb(109, 109, 240);
+  border-radius: 5px;
+  margin-left: 505px;
+  height: 35px;
+  width: 120px;
+  color: white;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120vw;
+  height: 130vh;
+  z-index: 50;
+ 
+}
+.alert-box {
+  position: fixed;
+  top: 35vh;
+  left: 25vw;
+  margin-left: 300px;
+  z-index: 100;
+  width: 220px;
+  border: 3px solid rgb(210, 230, 210);
+  padding: 20px 12px 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+  align-self: auto;
+}
+
+#close:before {
+  content: "\2573";
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  right: 2px;
+}
+
+.bootstrap-tagsinput .tag {
+  background: gray;
+  border: 1px solid black;
+  padding: 0 6px;
+  margin-right: 2px;
+  color: white;
+  border-radius: 4px;
+}
+
+.event-day {
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 13px;
+  background-color: seagreen;
+  color: white;
+  padding-left: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 24px;
+  width: inherit;
+}
+.eventViewContainer {
+  cursor: pointer;
+}

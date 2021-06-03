@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "angular-notifier/styles";
+
+.bg-login {
+  background-color: #99f08d;
+  background-image: linear-gradient(326deg, #99f08d 0%, #34daa1 74%);
+  overflow: hidden;
+}
+
+.ng2-menu-item {
+  height: 25px !important;
+  line-height: 10px !important;
+}
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  font-family: "Lato", sans-serif !important;
+}

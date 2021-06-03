@@ -1,0 +1,85 @@
+.column {
+  padding-left: 15px;
+}
+.column1 {
+  padding-left: 10px;
+}
+.title {
+  width: 300px;
+  height: 40px;
+}
+#priority {
+  width: 235px;
+  height: 40px;
+}
+.saveButton {
+  background-color: rgb(109, 109, 240);
+  border-radius: 5px;
+  margin-left: 505px;
+  height: 35px;
+  width: 120px;
+  color: white;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 50;
+}
+.alert-box {
+  position: fixed;
+  top: 35vh;
+  left: 10vw;
+  margin-left: 300px;
+  z-index: 100;
+  width: 350px;
+  border: 3px solid rgb(106, 112, 106);
+  padding: 20px 12px 10px 20px;
+  background-color: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  align-self: auto;
+}
+
+#close:before {
+  content: "\2573";
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-weight: bolder;
+}
+#edit {
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 80px;
+}
+#delete {
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+p {
+  margin-top: 30px;
+}
+
+.bootstrap-tagsinput .tag {
+  background: gray;
+  border: 1px solid black;
+  padding: 0 6px;
+  margin-right: 2px;
+  color: white;
+  border-radius: 4px;
+}
+
+.fa fa-calendar {
+  font-style: normal;
+}

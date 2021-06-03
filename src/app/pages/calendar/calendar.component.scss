@@ -1,0 +1,124 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
+.item1 {
+  flex-basis: 20%;
+}
+.item2 {
+  flex-basis: 70%;
+}
+.calendar-table {
+  border-collapse: collapse;
+  width: 1295px;
+  box-sizing: border-box;
+  margin: 55px auto 0px;
+  border: 1px solid #e5e8eb;
+  box-shadow: 10px 10px 20px rgba(0.1, 0, 0, 0.1);
+  background-color: white;
+}
+
+.calendar-table thead th {
+  vertical-align: bottom;
+  border-bottom: 1px solid rgb(221, 218, 218);
+  width: 14.2%;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+.calendar-table th {
+  vertical-align: top;
+  border: 1px solid rgb(221, 218, 218);
+  text-align: center;
+}
+.calendar-table td {
+  vertical-align: top;
+  border: 1px solid rgb(221, 218, 218);
+  text-align: center;
+  height: 100px;
+}
+
+.calendar-day {
+  height: 12vh;
+  max-height: 12vh;
+  cursor: pointer;
+}
+
+.calendar-items-wrapper {
+  margin-left: -10px;
+  margin-right: -10px;
+  overflow-y: auto;
+}
+
+.calendar-day:hover {
+  background-color: rgb(248, 248, 248);
+}
+.calendar-day.today {
+  background-color: #b4e4f3;
+}
+
+.next {
+  opacity: 0.5;
+  color: blue;
+  cursor: not-allowed;
+}
+
+.event-day {
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 400;
+  font-size: 13px;
+  background-color: seagreen;
+  color: white;
+  padding-left: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 24px;
+  width: inherit;
+}
+
+input {
+  height: 30px;
+  margin-top: 35px;
+  margin-left: 25px;
+  background-color: white;
+  border: 1px solid white;
+}
+
+#month {
+  border: 1px solid rgb(221, 218, 218);
+  height: 30px;
+  margin-top: 33px;
+  margin-left: 25px;
+}
+#year {
+  border: 1px solid rgb(221, 218, 218);
+  height: 30px;
+  margin-top: 33px;
+  margin-left: 25px;
+  text-align: center;
+}
+
+.table th {
+  padding: unset !important;
+  box-shadow: 0 4px 8px 0 rgba(0.1, 0, 0, 0.1);
+  transition: 0.3s;
+  background-color: rgb(221, 221, 221);
+}
+.table td {
+  padding: unset !important;
+  box-shadow: 0 4px 8px 0 rgba(0.1, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.wholeContainer {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow-x: scroll;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+
+  transition: 0.3s;
+}

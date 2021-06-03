@@ -1,0 +1,110 @@
+.column {
+  padding-left: 15px;
+  padding-bottom: 10x;
+}
+.column1 {
+  padding-left: 10px;
+}
+.title {
+  width: 300px;
+  height: 40px;
+}
+#priority {
+  width: 235px;
+  height: 40px;
+}
+.saveButton {
+  justify-content: flex-end;
+  margin-right: 105px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  // background: rgba(0, 0, 0, 0.65);
+  background: rgba(43, 43, 43, 0.65);
+  z-index: 50;
+}
+.alert-box {
+  position: fixed;
+  top: 5vh;
+  left: 10vw;
+  height: 580px;
+  margin-left: 300px;
+  z-index: 100;
+  padding: 20px 12px 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+  align-self: auto;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#close:before {
+  content: "\2573";
+  background-color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.bootstrap-tagsinput .tag {
+  background: gray;
+  border: 1px solid black;
+  padding: 0 6px;
+  margin-right: 2px;
+  color: white;
+  border-radius: 4px;
+}
+
+.circleBase {
+  border-radius: 50%;
+  // behavior: url(PIE.htc);
+}
+
+.roundIcon {
+  background-color: yellow;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  align-content: center;
+}
+
+.roww {
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.emailList {
+  margin: auto;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.test {
+  width: 1000px;
+  height: 1000px;
+}
+
+.alert {
+  padding: 0.5rem 0.25rem;
+}
+
+.alert-danger {
+  height: 38px;
+  font-size: 12px;
+  text-align: initial;
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}

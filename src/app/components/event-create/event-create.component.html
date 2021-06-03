@@ -1,0 +1,259 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="alert-box">
+  <div class="row">
+    <h3 style="padding-left: 13px">{{ eventType }}</h3>
+    <br />
+    <div id="close" (click)="onClose()"></div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="column">
+        <div class="form-group">
+          <label for="eventTitle"><b>Event Title</b></label
+          ><br />
+          <input
+            autocomplete="off"
+            formControlName="eventTitle"
+            type="text"
+            class="
+              form-control
+              focus:outline-none
+              focus:ring
+              focus:border-blue-300
+            "
+            placeholder="Meeting"
+            style="height: 40px; width: 358px"
+          />
+          <div
+            *ngIf="f.eventTitle.touched && f.eventTitle.invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f.eventTitle.errors.required">
+              Event title is required.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="form-group">
+          <label for="priority"><b>Priority:</b></label
+          ><br />
+          <div id="priority">
+            <select
+              formControlName="priority"
+              id="priority"
+              class="form-control"
+              name="priority"
+            >
+              <option value="" disabled selected>Priority level</option>
+              <option value="1">High</option>
+              <option value="2">Medium</option>
+              <option value="3">Low</option>
+            </select>
+            <div
+              *ngIf="f.priority.touched && f.priority.invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f.priority.errors.required">Select priority.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="column">
+        <div class="form-group">
+          <label for="startDate"><b>Start date</b></label
+          ><br />
+          <div class="form-group">
+            <input
+              autocomplete="off"
+              type="text"
+              formControlName="startDate"
+              id="startDate"
+              name="startDate"
+              style="height: 40px; width: 150px"
+              placeholder="DD-MM-YYYY"
+              [minDate]="minDate"
+              class="form-control"
+              value="{{ recievedClickedDate }}"
+              bsDatepicker
+            />
+          </div>
+          <div
+            *ngIf="f.startDate.touched && f.startDate.invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f.startDate.errors.required">Select date.</div>
+          </div>
+        </div>
+      </div>
+      <div class="column1">
+        <div class="form-group">
+          <label for="endDate"><b>End date</b></label
+          ><br />
+          <div class="form-group">
+            <input
+              autocomplete="off"
+              type="text"
+              formControlName="endDate"
+              id="endDate"
+              name="endDate"
+              value="(recievedClickedDate)"
+              class="
+                form-control
+                focus:outline-none
+                focus:ring
+                focus:border-blue-300
+              "
+              [minDate]="minDate"
+              bsDatepicker
+              style="height: 40px; width: 160px"
+            />
+          </div>
+          <div
+            *ngIf="f.endDate.touched && f.endDate.invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f.endDate.errors.required">Select date.</div>
+          </div>
+        </div>
+      </div>
+      <div class="column1">
+        <div class="form-group">
+          <label for="startTime"><b>Time</b></label
+          ><br />
+          <input
+            autocomplete="off"
+            formControlName="startTime"
+            id="startTime"
+            name="startTime"
+            class="form-control"
+            type="time"
+            value="00:00"
+            style="height: 40px"
+          />
+          <div
+            *ngIf="f.startTime.touched && f.startTime.invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f.startTime.errors.required">Select time.</div>
+          </div>
+        </div>
+      </div>
+      <div class="column1">
+        <div class="form-group">
+          <label for="endTime" style="color: white"><b>End time</b></label
+          ><br />
+          <input
+            autocomplete="off"
+            formControlName="endTime"
+            id="endTime"
+            name="endTime"
+            class="
+              form-control
+              focus:outline-none
+              focus:ring
+              focus:border-blue-300
+            "
+            type="time"
+            value="00:00"
+            style="height: 40px"
+          />
+          <div
+            *ngIf="f.endTime.touched && f.endTime.invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f.endTime.errors.required">Select time.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="column">
+        <div class="form-group">
+          <label><b>More information</b></label
+          ><br />
+          <textarea
+            autocomplete="off"
+            formControlName="description"
+            type="text"
+            class="
+              form-control
+              focus:outline-none
+              focus:ring
+              focus:border-blue-300
+            "
+            placeholder="About meeting"
+            style="width: 610px; height: 80px; resize: none"
+            rows="5"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="members"><b>Members</b></label>
+      <tag-input
+        formControlName="members"
+        id="members"
+        #tagInput
+        name="emails"
+        [placeholder]="'Add email'"
+        [secondaryPlaceholder]="'Add email'"
+        [errorMessages]="errorMessages"
+        [validators]="validators"
+        [editable]="true"
+        [clearOnBlur]="true"
+        [addOnPaste]="true"
+        [addOnBlur]="true"
+        pasteSplitPattern="splitPattern"
+        (onAdd)="onAdded($event)"
+        required
+        style="width: 610px"
+      >
+        <tag-input-dropdown
+          [autocompleteItems]="displayMails"
+          [showDropdownIfEmpty]="false"
+          [dynamicUpdate]="false"
+        >
+          <ng-template let-item="item" let-index="index">
+            <div class="row emailList test">
+              {{ item.display }}
+            </div>
+          </ng-template>
+        </tag-input-dropdown>
+      </tag-input>
+
+      <div
+        *ngIf="f.members.touched && f.members.invalid"
+        class="alert alert-danger"
+      >
+        <div *ngIf="f.members.errors.required">
+          Atleat one member should be added.
+        </div>
+      </div>
+    </div>
+    <div class="row" style="justify-content: flex-end; margin-right: auto">
+      <button
+        type="button"
+        class="
+          bg-blue-500
+          hover:bg-blue-700
+          text-white
+          font-bold
+          py-2
+          px-4
+          rounded
+          mt-2
+        "
+        style="margin-left: 20px; width: 140px"
+        (click)="onSubmit()"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
